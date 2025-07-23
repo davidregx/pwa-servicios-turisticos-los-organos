@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurantes - Servicios Turísticos Los Órganos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2196F3">
+</head>
+<body>
+    <!-- Header -->
+    <header class="page-header" style="position: relative;">
+        <button class="back-btn" onclick="goBack()">← Volver</button>
+        <h1>🍽️ Restaurantes</h1>
+        <p>Descubre la mejor gastronomía local con delivery</p>
+    </header>
+
+    <!-- Restaurantes disponibles -->
+    <section class="service-grid">
+        <!-- Restaurante 1: Marisquería El Pescador -->
+        <div class="service-card">
+            <h3>🦐 Marisquería El Pescador</h3>
+            <p>Especialistas en mariscos frescos y ceviches tradicionales peruanos.</p>
+            <div style="margin: 1rem 0;">
+                <span style="background: #4CAF50; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">⭐ 4.8</span>
+                <span style="color: #666; margin-left: 1rem;">🕒 30-45 min</span>
+            </div>
+            
+            <div style="margin: 1.5rem 0;">
+                <h4 style="color: #2196F3; margin-bottom: 1rem;">Carta:</h4>
+                <div style="text-align: left;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; padding: 0.5rem; background: #f8f9fa; border-radius: 8px;">
+                        <div>
+                            <strong>Ceviche Mixto</strong><br>
+                            <small style="color: #666;">Pescado, camarones y pulpo</small>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="color: #4CAF50; font-weight: bold;">S/25.00</div>
+                            <button class="select-btn" style="padding: 0.3rem 0.8rem; font-size: 0.8rem; margin-top: 0.3rem;" onclick="selectDish('ceviche1', 'Ceviche Mixto', 'S/25.00', 'Marisquería El Pescador')">Agregar</button>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; padding: 0.5rem; background: #f8f9fa; border-radius: 8px;">
+                        <div>
+                            <strong>Arroz con Mariscos</strong><br>
+                            <small style="color: #666;">Arroz con mariscos variados</small>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="color: #4CAF50; font-weight: bold;">S/28.00</div>
+                            <button class="select-btn" style="padding: 0.3rem 0.8rem; font-size: 0.8rem; margin-top: 0.3rem;" onclick="selectDish('arroz1', 'Arroz con Mariscos', 'S/28.00', 'Marisquería El Pescador')">Agregar</button>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; padding: 0.5rem; background: #f8f9fa; border-radius: 8px;">
+                        <div>
+                            <strong>Chicharrón de Pescado</strong><br>
+                            <small style="color: #666;">Con yuca y salsa criolla</small>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="color: #4CAF50; font-weight: bold;">S/22.00</div>
+                            <button class="select-btn" style="padding: 0.3rem 0.8rem; font-size: 0.8rem; margin-top: 0.3rem;" onclick="selectDish('chicharron1', 'Chicharrón de Pescado', 'S/22.00', 'Marisquería El Pescador')">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Restaurante 2: Pizzería La Ola -->
+        <div class="service-card">
+            <h3>🍕 Pizzería La Ola</h3>
+            <p>Pizzas artesanales con ingredientes frescos y vista al mar.</p>
+            <div style="margin: 1rem 0;">
+                <span style="background: #4CAF50; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">⭐ 4.6</span>
+                <span style="color: #666; margin-left: 1rem;">🕒 25-35 min</span>
+            </div>
+            
+            <div style="margin: 1.5rem 0;">
+                <h4 style="color: #2196F3; margin-bottom: 1rem;">Carta:</h4>
+                <div style="text-align: left;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; padding: 0.5rem; background: #f8f9fa; border-radius: 8px;">
+                        <div>
+                            <strong>Pizza Margherita</strong><br>
+                            <small style="color: #666;">Tomate, mozzarella y albahaca</small>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="color: #4CAF50; font-weight: bold;">S/32.00</div>
+                            <button class="select-btn" style="padding: 0.3rem 0.8rem; font-size: 0.8rem; margin-top: 0.3rem;" onclick="selectDish('pizza1', 'Pizza Margherita', 'S/32.00', 'Pizzería La Ola')">Agregar</button>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; padding: 0.5rem; background: #f8f9fa; border-radius: 8px;">
+                        <div>
+                            <strong>Pizza Hawaiana</strong><br>
+                            <small style="color: #666;">Jamón, piña y queso</small>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="color: #4CAF50; font-weight: bold;">S/35.00</div>
+                            <button class="select-btn" style="padding: 0.3rem 0.8rem; font-size: 0.8rem; margin-top: 0.3rem;" onclick="selectDish('pizza2', 'Pizza Hawaiana', 'S/35.00', 'Pizzería La Ola')">Agregar</button>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; padding: 0.5rem; background: #f8f9fa; border-radius: 8px;">
+                        <div>
+                            <strong>Lasagna de Carne</strong><br>
+                            <small style="color: #666;">Con salsa bolognesa casera</small>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="color: #4CAF50; font-weight: bold;">S/28.00</div>
+                            <button class="select-btn" style="padding: 0.3rem 0.8rem; font-size: 0.8rem; margin-top: 0.3rem;" onclick="selectDish('lasagna1', 'Lasagna de Carne', 'S/28.00', 'Pizzería La Ola')">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Restaurante 3: Chifa Dragón Dorado -->
+        <div class="service-card">
+            <h3>🥢 Chifa Dragón Dorado</h3>
+            <p>Auténtica comida china-peruana con sabores tradicionales.</p>
+            <div style="margin: 1rem 0;">
+                <span style="background: #4CAF50; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">⭐ 4.7</span>
+                <span style="color: #666; margin-left: 1rem;">🕒 20-30 min</span>
+            </div>
+            
+            <div style="margin: 1.5rem 0;">
+                <h4 style="color: #2196F3; margin-bottom: 1rem;">Carta:</h4>
+                <div style="text-align: left;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; padding: 0.5rem; background: #f8f9fa; border-radius: 8px;">
+                        <div>
+                            <strong>Arroz Chaufa Especial</strong><br>
+                            <small style="color: #666;">Con pollo, cerdo y camarones</small>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="color: #4CAF50; font-weight: bold;">S/24.00</div>
+                            <button class="select-btn" style="padding: 0.3rem 0.8rem; font-size: 0.8rem; margin-top: 0.3rem;" onclick="selectDish('chaufa1', 'Arroz Chaufa Especial', 'S/24.00', 'Chifa Dragón Dorado')">Agregar</button>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; padding: 0.5rem; background: #f8f9fa; border-radius: 8px;">
+                        <div>
+                            <strong>Tallarín Saltado</strong><br>
+                            <small style="color: #666;">Con carne y verduras</small>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="color: #4CAF50; font-weight: bold;">S/22.00</div>
+                            <button class="select-btn" style="padding: 0.3rem 0.8rem; font-size: 0.8rem; margin-top: 0.3rem;" onclick="selectDish('tallarin1', 'Tallarín Saltado', 'S/22.00', 'Chifa Dragón Dorado')">Agregar</button>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; padding: 0.5rem; background: #f8f9fa; border-radius: 8px;">
+                        <div>
+                            <strong>Wantán Frito</strong><br>
+                            <small style="color: #666;">12 unidades con salsa agridulce</small>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="color: #4CAF50; font-weight: bold;">S/18.00</div>
+                            <button class="select-btn" style="padding: 0.3rem 0.8rem; font-size: 0.8rem; margin-top: 0.3rem;" onclick="selectDish('wantan1', 'Wantán Frito', 'S/18.00', 'Chifa Dragón Dorado')">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Restaurante 4: Parrilla El Asador -->
+        <div class="service-card">
+            <h3>🥩 Parrilla El Asador</h3>
+            <p>Carnes a la parrilla y platos criollos en un ambiente familiar.</p>
+            <div style="margin: 1rem 0;">
+                <span style="background: #4CAF50; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">⭐ 4.5</span>
+                <span style="color: #666; margin-left: 1rem;">🕒 35-45 min</span>
+            </div>
+            
+            <div style="margin: 1.5rem 0;">
+                <h4 style="color: #2196F3; margin-bottom: 1rem;">Carta:</h4>
+                <div style="text-align: left;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; padding: 0.5rem; background: #f8f9fa; border-radius: 8px;">
+                        <div>
+                            <strong>Parrilla Familiar</strong><br>
+                            <small style="color: #666;">Para 4 personas, carnes variadas</small>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="color: #4CAF50; font-weight: bold;">S/85.00</div>
+                            <button class="select-btn" style="padding: 0.3rem 0.8rem; font-size: 0.8rem; margin-top: 0.3rem;" onclick="selectDish('parrilla1', 'Parrilla Familiar', 'S/85.00', 'Parrilla El Asador')">Agregar</button>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; padding: 0.5rem; background: #f8f9fa; border-radius: 8px;">
+                        <div>
+                            <strong>Lomo Saltado</strong><br>
+                            <small style="color: #666;">Con papas fritas y arroz</small>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="color: #4CAF50; font-weight: bold;">S/26.00</div>
+                            <button class="select-btn" style="padding: 0.3rem 0.8rem; font-size: 0.8rem; margin-top: 0.3rem;" onclick="selectDish('lomo1', 'Lomo Saltado', 'S/26.00', 'Parrilla El Asador')">Agregar</button>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; padding: 0.5rem; background: #f8f9fa; border-radius: 8px;">
+                        <div>
+                            <strong>Pollo a la Brasa</strong><br>
+                            <small style="color: #666;">1/4 de pollo con papas</small>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="color: #4CAF50; font-weight: bold;">S/20.00</div>
+                            <button class="select-btn" style="padding: 0.3rem 0.8rem; font-size: 0.8rem; margin-top: 0.3rem;" onclick="selectDish('pollo1', 'Pollo a la Brasa', 'S/20.00', 'Parrilla El Asador')">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Restaurante 5: Café & Postres Dulce Mar -->
+        <div class="service-card">
+            <h3>☕ Café & Postres Dulce Mar</h3>
+            <p>Cafetería con los mejores postres caseros y bebidas especiales.</p>
+            <div style="margin: 1rem 0;">
+                <span style="background: #4CAF50; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">⭐ 4.9</span>
+                <span style="color: #666; margin-left: 1rem;">🕒 15-25 min</span>
+            </div>
+            
+            <div style="margin: 1.5rem 0;">
+                <h4 style="color: #2196F3; margin-bottom: 1rem;">Carta:</h4>
+                <div style="text-align: left;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; padding: 0.5rem; background: #f8f9fa; border-radius: 8px;">
+                        <div>
+                            <strong>Torta de Chocolate</strong><br>
+                            <small style="color: #666;">Porción individual casera</small>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="color: #4CAF50; font-weight: bold;">S/12.00</div>
+                            <button class="select-btn" style="padding: 0.3rem 0.8rem; font-size: 0.8rem; margin-top: 0.3rem;" onclick="selectDish('torta1', 'Torta de Chocolate', 'S/12.00', 'Café & Postres Dulce Mar')">Agregar</button>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; padding: 0.5rem; background: #f8f9fa; border-radius: 8px;">
+                        <div>
+                            <strong>Café Americano</strong><br>
+                            <small style="color: #666;">Café de grano selecto</small>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="color: #4CAF50; font-weight: bold;">S/8.00</div>
+                            <button class="select-btn" style="padding: 0.3rem 0.8rem; font-size: 0.8rem; margin-top: 0.3rem;" onclick="selectDish('cafe1', 'Café Americano', 'S/8.00', 'Café & Postres Dulce Mar')">Agregar</button>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; padding: 0.5rem; background: #f8f9fa; border-radius: 8px;">
+                        <div>
+                            <strong>Smoothie Tropical</strong><br>
+                            <small style="color: #666;">Mango, piña y maracuyá</small>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="color: #4CAF50; font-weight: bold;">S/15.00</div>
+                            <button class="select-btn" style="padding: 0.3rem 0.8rem; font-size: 0.8rem; margin-top: 0.3rem;" onclick="selectDish('smoothie1', 'Smoothie Tropical', 'S/15.00', 'Café & Postres Dulce Mar')">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botón de pedido -->
+    <section style="text-align: center; margin: 2rem 0;">
+        <button class="whatsapp-btn" onclick="orderFood()">
+            📱 Hacer Pedido por WhatsApp
+        </button>
+        <button class="order-btn" onclick="clearCart()" style="background: #f44336; margin-left: 1rem;">
+            🗑️ Limpiar Carrito
+        </button>
+        <p style="color: #666; margin-top: 1rem;">
+            Tu pedido se enviará directamente al restaurante para confirmación
+        </p>
+    </section>
+
+    <!-- Información de delivery -->
+    <section style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+        <div style="background: #f8f9fa; padding: 2rem; border-radius: 15px; border-left: 5px solid #4CAF50;">
+            <h3 style="color: #4CAF50; margin-bottom: 1rem;">🚚 Información de Delivery</h3>
+            <ul style="color: #666; line-height: 1.8;">
+                <li><strong>Horario:</strong> Lunes a Domingo de 11:00 AM a 10:00 PM</li>
+                <li><strong>Tiempo de entrega:</strong> 30-60 minutos según el restaurante</li>
+                <li><strong>Costo de delivery:</strong> S/5.00 (Gratis en pedidos mayores a S/50.00)</li>
+                <li><strong>Zona de cobertura:</strong> Todo el distrito de Los Órganos</li>
+                <li><strong>Pago:</strong> Efectivo contra entrega o transferencia bancaria</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Resumen del carrito -->
+    <div id="cart-summary" class="cart-summary hidden">
+        <!-- Se llena dinámicamente con JavaScript -->
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
