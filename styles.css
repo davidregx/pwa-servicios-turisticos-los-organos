@@ -529,6 +529,24 @@ body.dark-mode .dark-mode-toggle:hover {
     .banners-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    /* Aumentar tamaño de imágenes en Organismos del Distrito para móvil */
+    .banner-item img {
+        width: 100%;
+        max-width: 200px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    
+    .banners-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        max-width: 100%;
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 480px) {
@@ -620,6 +638,28 @@ body.dark-mode .dark-mode-toggle:hover {
     
     .carousel-slide img {
         height: 200px;
+    }
+    
+    /* Aumentar aún más las imágenes de Organismos del Distrito en móviles pequeños */
+    .banner-item img {
+        width: 100%;
+        max-width: 250px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    .banners-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .banner-item {
+        padding: 1.5rem;
     }
 }
 
