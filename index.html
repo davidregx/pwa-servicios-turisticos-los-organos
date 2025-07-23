@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=no">
+    <title>Servicios Turísticos Los Órganos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-5.6inch-zoom.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2196F3">
+    <link rel="icon" type="image/png" href="icons/icon-192x192.png">
+</head>
+<body>
+    <!-- Header con Logo -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="https://lh3.googleusercontent.com/ogw/AF2bZyhg-x6vcpFK1u2ftE_Q1IqrwhOqDQTF-XBk0hHQDEMi1g=s1000-c-mo" alt="Logo Los Órganos" class="logo">
+            <!-- Botón de modo noche -->
+            <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Activar modo noche">
+                <span class="toggle-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Navegación Principal - 4 Categorías -->
+    <section class="main-categories">
+        <div class="category-grid">
+            <div class="category-card" onclick="navigateTo('movilidad.html')">
+                <img src="https://cdn-icons-png.flaticon.com/512/4910/4910318.png" alt="TAXI" class="category-icon-img">
+                <h3>TAXI</h3>
+                <p>Servicio de taxi</p>
+            </div>
+            <div class="category-card" onclick="navigateTo('restaurantes.html')">
+                <img src="https://cdn-icons-png.flaticon.com/512/1996/1996068.png" alt="REST" class="category-icon-img">
+                <h3 class="category-title">REST</h3>
+                <p class="category-subtitle">Delivery y cartas</p>
+            </div>
+            <div class="category-card" onclick="navigateTo('tours.html')">
+                <img src="https://www.puertoyerua.gob.ar/wp-content/uploads/2020/12/sightseeing_icon-icons.com_61835-400x400.png" alt="Tours" class="category-icon-img">
+                <h3>Tours</h3>
+                <p>Actividades turísticas</p>
+            </div>
+            <div class="category-card" onclick="navigateTo('tienda.html')">
+                <img src="https://images.icon-icons.com/1846/PNG/512/shop_116167.png" alt="Tienda" class="category-icon-img">
+                <h3>Tienda</h3>
+                <p>Lista de compras</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrusel de Imágenes -->
+    <section class="carousel-section">
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-698788570882843315/original/930fa8c4-a420-4ba2-972a-d333ce7d40e7.jpeg?im_w=1440" alt="Playa Los Órganos">
+                <div class="carousel-caption">Hermosas playas de Los Órganos</div>
+            </div>
+            <div class="carousel-slide">
+                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-11159977/original/d7513b22-2955-42bc-bb40-e50bb13b506c.jpeg?im_w=1440" alt="Avistamiento de Ballenas">
+                <div class="carousel-caption">Avistamiento de ballenas</div>
+            </div>
+            <div class="carousel-slide">
+                <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1454468313858073442/original/8a93e407-7c05-49d1-9d34-122e76c6d43a.jpeg?im_w=1440" alt="Surf">
+                <div class="carousel-caption">Clases de surf y tabla</div>
+            </div>
+        </div>
+        <div class="carousel-dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+
+    <!-- Banners de Organismos del Distrito -->
+    <section class="district-banners">
+        <h2>Organismos del Distrito</h2>
+        <div class="banners-grid">
+            <div class="banner-item">
+                <img src="https://www.muniorganos.gob.pe/images/municipalidad/municipalidad.jpeg" alt="Municipalidad">
+            </div>
+            <div class="banner-item">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nop2iX8FoR0zU8MSOL5k9nF1D3UJ7EAfmhth56ftxDxyiB_Bv3M8PuIH8T0OGxYMuU670liBYoK3_NjRF0TScf_nVbN20XqyC2WrRO9kyd1jVUDs3a7BZvCe5_jeUHSGSbyr6IYfg=s1360-w1360-h1020-rw" alt="Plaza de Armas">
+            </div>
+            <div class="banner-item">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4npWvJxFWWxdAyTkHvTLYnQZ1f_G_BO4KCvs4XauUyVf2U-1FYkq3TEdPbOdrs_2RkZeVbjH-CuEkguxYelhc1L-Hgwtgr5WmiId0qr49SHxAywUTJSb3Kh5Ba-DLZPbaAUkyfzITg=s1360-w1360-h1020-rw" alt="Muelle">
+            </div>
+            <div class="banner-item">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nr2g1K-bWDVuVWybaFcxxBK1DJ8k21vm9YFmDSnuD7RI7x4UGvYCSFcsVo39Nqhjjn3WOfe-vqnBoTD1IoXiQrcO1BO8ubQohEW2t2TK_-eEDHmiFFevydOiCYXVvTiPLHC6ACZcg=s1360-w1360-h1020-rw" alt="Cerro el Encanto">
+            </div>
+        </div>
+    </section>
+
+    <!-- Secciones Adicionales -->
+    <section class="additional-sections">
+        <div class="section-grid">
+            <div class="info-section">
+                <h3>📖 Historia</h3>
+                <p>Los Órganos es un distrito costero conocido por sus hermosas playas y excelentes olas para el surf. Un destino turístico en crecimiento con rica cultura marina.</p>
+                <button class="read-more-btn">Leer más</button>
+            </div>
+            <div class="info-section">
+                <h3>📸 Galería</h3>
+                <p>Descubre las mejores fotografías de nuestro hermoso distrito, desde paisajes marinos hasta momentos únicos de la vida local.</p>
+                <button class="read-more-btn">Ver galería</button>
+            </div>
+            <div class="info-section">
+                <h3>🎥 Videos Locales</h3>
+                <p>Conoce Los Órganos a través de videos que muestran la belleza natural y las actividades que puedes realizar aquí.</p>
+                <button class="read-more-btn">Ver videos</button>
+            </div>
+            <div class="info-section">
+                <h3>🌊 Clima</h3>
+                <p>Información actualizada sobre el clima y las condiciones del mar para planificar mejor tus actividades.</p>
+                <button class="read-more-btn">Ver clima</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Servicios Turísticos Los Órganos. Todos los derechos reservados.</p>
+        <p>Desarrollado para promover el turismo local</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
