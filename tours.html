@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours - Servicios Turísticos Los Órganos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2196F3">
+</head>
+<body>
+    <!-- Header -->
+    <header class="page-header" style="position: relative;">
+        <button class="back-btn" onclick="goBack()">← Volver</button>
+        <h1>🏄‍♂️ Tours y Actividades</h1>
+        <p>Vive experiencias únicas en Los Órganos</p>
+    </header>
+
+    <!-- Formulario de reserva -->
+    <section class="reservation-form" style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+        <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+            <h2 style="color: #2196F3; margin-bottom: 1.5rem;">Detalles de tu reserva</h2>
+            
+            <div style="display: grid; gap: 1rem; margin-bottom: 1.5rem;">
+                <div>
+                    <label for="tour-date" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Fecha preferida:</label>
+                    <input type="date" id="tour-date" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                </div>
+                
+                <div>
+                    <label for="people-count" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Número de personas:</label>
+                    <select id="people-count" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        <option value="1">1 persona</option>
+                        <option value="2">2 personas</option>
+                        <option value="3">3 personas</option>
+                        <option value="4">4 personas</option>
+                        <option value="5">5 personas</option>
+                        <option value="6">6+ personas</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tours disponibles -->
+    <section class="service-grid">
+        <!-- Tour 1: Clases de Surf -->
+        <div class="service-card">
+            <h3>🏄‍♂️ Clases de Surf</h3>
+            <p>Aprende a surfear con instructores certificados en las mejores olas de Los Órganos.</p>
+            <div class="price">S/80.00 por persona</div>
+            <ul style="text-align: left; margin: 1rem 0; color: #666;">
+                <li>Duración: 2 horas</li>
+                <li>Incluye tabla y traje</li>
+                <li>Instructor certificado</li>
+                <li>Grupos pequeños (máx. 4 personas)</li>
+                <li>Nivel: Principiante a intermedio</li>
+                <li>Horarios: 8:00 AM, 10:00 AM, 3:00 PM</li>
+            </ul>
+            <button class="select-btn" onclick="selectTour('surf1', 'Clases de Surf', 'S/80.00 por persona')">Seleccionar</button>
+        </div>
+
+        <!-- Tour 2: Avistamiento de Ballenas -->
+        <div class="service-card">
+            <h3>🐋 Avistamiento de Ballenas</h3>
+            <p>Experiencia única observando ballenas jorobadas en su hábitat natural (temporada Jul-Oct).</p>
+            <div class="price">S/120.00 por persona</div>
+            <ul style="text-align: left; margin: 1rem 0; color: #666;">
+                <li>Duración: 3-4 horas</li>
+                <li>Embarcación segura y cómoda</li>
+                <li>Guía especializado</li>
+                <li>Temporada: Julio a Octubre</li>
+                <li>Incluye snacks y agua</li>
+                <li>Salidas: 7:00 AM y 2:00 PM</li>
+            </ul>
+            <button class="select-btn" onclick="selectTour('ballenas1', 'Avistamiento de Ballenas', 'S/120.00 por persona')">Seleccionar</button>
+        </div>
+
+        <!-- Tour 3: Nado con Tortugas -->
+        <div class="service-card">
+            <h3>🐢 Nado con Tortugas</h3>
+            <p>Nada junto a tortugas marinas en aguas cristalinas, una experiencia inolvidable.</p>
+            <div class="price">S/100.00 por persona</div>
+            <ul style="text-align: left; margin: 1rem 0; color: #666;">
+                <li>Duración: 2.5 horas</li>
+                <li>Equipo de snorkel incluido</li>
+                <li>Guía marino certificado</li>
+                <li>Transporte en bote</li>
+                <li>Avistamiento garantizado*</li>
+                <li>Horarios: 8:30 AM, 1:30 PM</li>
+            </ul>
+            <button class="select-btn" onclick="selectTour('tortugas1', 'Nado con Tortugas', 'S/100.00 por persona')">Seleccionar</button>
+        </div>
+
+        <!-- Tour 4: Paseo en Bote -->
+        <div class="service-card">
+            <h3>⛵ Paseo en Bote</h3>
+            <p>Recorre la costa de Los Órganos y descubre playas escondidas y formaciones rocosas.</p>
+            <div class="price">S/60.00 por persona</div>
+            <ul style="text-align: left; margin: 1rem 0; color: #666;">
+                <li>Duración: 2 horas</li>
+                <li>Visita a 3 playas vírgenes</li>
+                <li>Capitán experimentado</li>
+                <li>Bote para hasta 8 personas</li>
+                <li>Incluye bebidas</li>
+                <li>Horarios flexibles</li>
+            </ul>
+            <button class="select-btn" onclick="selectTour('bote1', 'Paseo en Bote', 'S/60.00 por persona')">Seleccionar</button>
+        </div>
+
+        <!-- Tour 5: Tour de Atardecer -->
+        <div class="service-card">
+            <h3>🌅 Tour de Atardecer</h3>
+            <p>Disfruta de los atardeceres más espectaculares del Pacífico desde el mar.</p>
+            <div class="price">S/90.00 por persona</div>
+            <ul style="text-align: left; margin: 1rem 0; color: #666;">
+                <li>Duración: 2.5 horas</li>
+                <li>Incluye cóctel de bienvenida</li>
+                <li>Música ambiente</li>
+                <li>Snacks gourmet</li>
+                <li>Fotografía profesional</li>
+                <li>Horario: 4:30 PM - 7:00 PM</li>
+            </ul>
+            <button class="select-btn" onclick="selectTour('atardecer1', 'Tour de Atardecer', 'S/90.00 por persona')">Seleccionar</button>
+        </div>
+
+        <!-- Tour 6: Pesca Deportiva -->
+        <div class="service-card">
+            <h3>🎣 Pesca Deportiva</h3>
+            <p>Experiencia de pesca en alta mar con equipos profesionales y guía experto.</p>
+            <div class="price">S/150.00 por persona</div>
+            <ul style="text-align: left; margin: 1rem 0; color: #666;">
+                <li>Duración: 4-5 horas</li>
+                <li>Equipo de pesca incluido</li>
+                <li>Capitán pescador experto</li>
+                <li>Especies: Mero, Perico, Atún</li>
+                <li>Limpieza del pescado incluida</li>
+                <li>Salidas: 6:00 AM</li>
+            </ul>
+            <button class="select-btn" onclick="selectTour('pesca1', 'Pesca Deportiva', 'S/150.00 por persona')">Seleccionar</button>
+        </div>
+
+        <!-- Tour 7: Clases de Stand Up Paddle -->
+        <div class="service-card">
+            <h3>🏄‍♀️ Stand Up Paddle (SUP)</h3>
+            <p>Aprende SUP en aguas tranquilas, perfecto para principiantes y familias.</p>
+            <div class="price">S/70.00 por persona</div>
+            <ul style="text-align: left; margin: 1rem 0; color: #666;">
+                <li>Duración: 1.5 horas</li>
+                <li>Tabla SUP y remo incluidos</li>
+                <li>Instructor certificado</li>
+                <li>Apto para todas las edades</li>
+                <li>Aguas tranquilas y seguras</li>
+                <li>Horarios: 9:00 AM, 11:00 AM, 4:00 PM</li>
+            </ul>
+            <button class="select-btn" onclick="selectTour('sup1', 'Stand Up Paddle (SUP)', 'S/70.00 por persona')">Seleccionar</button>
+        </div>
+
+        <!-- Tour 8: Tour Gastronómico -->
+        <div class="service-card">
+            <h3>🍽️ Tour Gastronómico</h3>
+            <p>Descubre los sabores locales visitando los mejores restaurantes y mercados.</p>
+            <div class="price">S/110.00 por persona</div>
+            <ul style="text-align: left; margin: 1rem 0; color: #666;">
+                <li>Duración: 3 horas</li>
+                <li>Visita a 4 establecimientos</li>
+                <li>Degustación incluida</li>
+                <li>Guía gastronómico local</li>
+                <li>Historia y cultura culinaria</li>
+                <li>Horarios: 11:00 AM, 5:00 PM</li>
+            </ul>
+            <button class="select-btn" onclick="selectTour('gastronomico1', 'Tour Gastronómico', 'S/110.00 por persona')">Seleccionar</button>
+        </div>
+
+        <!-- Tour 9: Kayak en Manglares -->
+        <div class="service-card">
+            <h3>🛶 Kayak en Manglares</h3>
+            <p>Explora los manglares cercanos en kayak y observa la fauna local.</p>
+            <div class="price">S/85.00 por persona</div>
+            <ul style="text-align: left; margin: 1rem 0; color: #666;">
+                <li>Duración: 2.5 horas</li>
+                <li>Kayak doble o individual</li>
+                <li>Guía naturalista</li>
+                <li>Observación de aves</li>
+                <li>Incluye agua y snacks</li>
+                <li>Horarios: 8:00 AM, 2:30 PM</li>
+            </ul>
+            <button class="select-btn" onclick="selectTour('kayak1', 'Kayak en Manglares', 'S/85.00 por persona')">Seleccionar</button>
+        </div>
+    </section>
+
+    <!-- Botón de reserva -->
+    <section style="text-align: center; margin: 2rem 0;">
+        <button class="whatsapp-btn" onclick="bookTour()">
+            📱 Reservar por WhatsApp
+        </button>
+        <p style="color: #666; margin-top: 1rem;">
+            Te contactaremos para confirmar disponibilidad y coordinar detalles
+        </p>
+    </section>
+
+    <!-- Información importante -->
+    <section style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+        <div style="background: #f8f9fa; padding: 2rem; border-radius: 15px; border-left: 5px solid #2196F3;">
+            <h3 style="color: #2196F3; margin-bottom: 1rem;">ℹ️ Información importante</h3>
+            <ul style="color: #666; line-height: 1.8;">
+                <li><strong>Reservas:</strong> Se recomienda reservar con 24 horas de anticipación</li>
+                <li><strong>Clima:</strong> Los tours pueden cancelarse por condiciones climáticas adversas</li>
+                <li><strong>Edad mínima:</strong> Varía según la actividad (consultar por cada tour)</li>
+                <li><strong>Qué traer:</strong> Protector solar, sombrero, ropa cómoda y agua</li>
+                <li><strong>Pago:</strong> 50% al reservar, 50% el día del tour</li>
+                <li><strong>Cancelación:</strong> Gratuita hasta 12 horas antes del tour</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Política de seguridad -->
+    <section style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+        <div style="background: #e8f5e8; padding: 2rem; border-radius: 15px; border-left: 5px solid #4CAF50;">
+            <h3 style="color: #4CAF50; margin-bottom: 1rem;">🛡️ Seguridad y Certificaciones</h3>
+            <ul style="color: #666; line-height: 1.8;">
+                <li><strong>Guías certificados:</strong> Todos nuestros guías tienen certificación oficial</li>
+                <li><strong>Equipos de seguridad:</strong> Chalecos salvavidas y equipos de primeros auxilios</li>
+                <li><strong>Embarcaciones:</strong> Inspecciones regulares y seguros vigentes</li>
+                <li><strong>Protocolos COVID:</strong> Cumplimos todos los protocolos sanitarios</li>
+                <li><strong>Seguro incluido:</strong> Cobertura de accidentes durante la actividad</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Resumen del carrito -->
+    <div id="cart-summary" class="cart-summary hidden">
+        <!-- Se llena dinámicamente con JavaScript -->
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
