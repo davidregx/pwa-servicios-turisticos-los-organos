@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - Servicios Turísticos Los Órganos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2196F3">
+</head>
+<body>
+    <!-- Header -->
+    <header class="page-header" style="position: relative;">
+        <button class="back-btn" onclick="goBack()">← Volver</button>
+        <h1>🛒 Tienda Local</h1>
+        <p>Productos frescos y artículos esenciales con delivery</p>
+    </header>
+
+    <!-- Categorías de productos -->
+    <section style="max-width: 1200px; margin: 2rem auto; padding: 0 1rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+            <button style="background: #4CAF50; color: white; border: none; padding: 1rem; border-radius: 10px; cursor: pointer; font-size: 1rem;" onclick="filterProducts('frutas')">🍎 Frutas</button>
+            <button style="background: #FF9800; color: white; border: none; padding: 1rem; border-radius: 10px; cursor: pointer; font-size: 1rem;" onclick="filterProducts('verduras')">🥕 Verduras</button>
+            <button style="background: #2196F3; color: white; border: none; padding: 1rem; border-radius: 10px; cursor: pointer; font-size: 1rem;" onclick="filterProducts('abarrotes')">🥫 Abarrotes</button>
+            <button style="background: #9C27B0; color: white; border: none; padding: 1rem; border-radius: 10px; cursor: pointer; font-size: 1rem;" onclick="filterProducts('bebidas')">🥤 Bebidas</button>
+            <button style="background: #607D8B; color: white; border: none; padding: 1rem; border-radius: 10px; cursor: pointer; font-size: 1rem;" onclick="filterProducts('limpieza')">🧽 Limpieza</button>
+            <button style="background: #795548; color: white; border: none; padding: 1rem; border-radius: 10px; cursor: pointer; font-size: 1rem;" onclick="filterProducts('todos')">📋 Ver Todo</button>
+        </div>
+    </section>
+
+    <!-- Productos disponibles -->
+    <section class="service-grid" id="productos-grid">
+        <!-- Frutas -->
+        <div class="service-card" data-category="frutas">
+            <h3>🍌 Plátanos</h3>
+            <p>Plátanos frescos de la región, perfectos para el desayuno.</p>
+            <div class="price">S/3.50 por kg</div>
+            <div style="margin: 1rem 0;">
+                <label for="quantity-platanos">Cantidad (kg):</label>
+                <input type="number" id="quantity-platanos" min="1" max="10" value="1" style="width: 80px; padding: 0.5rem; margin-left: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+            <button class="select-btn" onclick="addToShoppingList('platanos', 'Plátanos', 'S/3.50')">Agregar a lista</button>
+        </div>
+
+        <div class="service-card" data-category="frutas">
+            <h3>🍎 Manzanas</h3>
+            <p>Manzanas rojas importadas, crujientes y dulces.</p>
+            <div class="price">S/8.00 por kg</div>
+            <div style="margin: 1rem 0;">
+                <label for="quantity-manzanas">Cantidad (kg):</label>
+                <input type="number" id="quantity-manzanas" min="1" max="10" value="1" style="width: 80px; padding: 0.5rem; margin-left: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+            <button class="select-btn" onclick="addToShoppingList('manzanas', 'Manzanas', 'S/8.00')">Agregar a lista</button>
+        </div>
+
+        <div class="service-card" data-category="frutas">
+            <h3>🥭 Mangos</h3>
+            <p>Mangos de temporada, dulces y jugosos de la región.</p>
+            <div class="price">S/4.00 por kg</div>
+            <div style="margin: 1rem 0;">
+                <label for="quantity-mangos">Cantidad (kg):</label>
+                <input type="number" id="quantity-mangos" min="1" max="10" value="1" style="width: 80px; padding: 0.5rem; margin-left: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+            <button class="select-btn" onclick="addToShoppingList('mangos', 'Mangos', 'S/4.00')">Agregar a lista</button>
+        </div>
+
+        <!-- Verduras -->
+        <div class="service-card" data-category="verduras">
+            <h3>🥕 Zanahorias</h3>
+            <p>Zanahorias frescas, ideales para ensaladas y guisos.</p>
+            <div class="price">S/2.50 por kg</div>
+            <div style="margin: 1rem 0;">
+                <label for="quantity-zanahorias">Cantidad (kg):</label>
+                <input type="number" id="quantity-zanahorias" min="1" max="10" value="1" style="width: 80px; padding: 0.5rem; margin-left: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+            <button class="select-btn" onclick="addToShoppingList('zanahorias', 'Zanahorias', 'S/2.50')">Agregar a lista</button>
+        </div>
+
+        <div class="service-card" data-category="verduras">
+            <h3>🧅 Cebollas</h3>
+            <p>Cebollas blancas frescas, esenciales para la cocina.</p>
+            <div class="price">S/3.00 por kg</div>
+            <div style="margin: 1rem 0;">
+                <label for="quantity-cebollas">Cantidad (kg):</label>
+                <input type="number" id="quantity-cebollas" min="1" max="10" value="1" style="width: 80px; padding: 0.5rem; margin-left: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+            <button class="select-btn" onclick="addToShoppingList('cebollas', 'Cebollas', 'S/3.00')">Agregar a lista</button>
+        </div>
+
+        <div class="service-card" data-category="verduras">
+            <h3>🥬 Lechuga</h3>
+            <p>Lechuga fresca y crujiente, perfecta para ensaladas.</p>
+            <div class="price">S/2.00 por unidad</div>
+            <div style="margin: 1rem 0;">
+                <label for="quantity-lechuga">Cantidad:</label>
+                <input type="number" id="quantity-lechuga" min="1" max="10" value="1" style="width: 80px; padding: 0.5rem; margin-left: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+            <button class="select-btn" onclick="addToShoppingList('lechuga', 'Lechuga', 'S/2.00')">Agregar a lista</button>
+        </div>
+
+        <!-- Abarrotes -->
+        <div class="service-card" data-category="abarrotes">
+            <h3>🍚 Arroz</h3>
+            <p>Arroz extra superior, bolsa de 5kg.</p>
+            <div class="price">S/12.00 por bolsa</div>
+            <div style="margin: 1rem 0;">
+                <label for="quantity-arroz">Cantidad:</label>
+                <input type="number" id="quantity-arroz" min="1" max="5" value="1" style="width: 80px; padding: 0.5rem; margin-left: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+            <button class="select-btn" onclick="addToShoppingList('arroz', 'Arroz (5kg)', 'S/12.00')">Agregar a lista</button>
+        </div>
+
+        <div class="service-card" data-category="abarrotes">
+            <h3>🍝 Fideos</h3>
+            <p>Fideos espagueti, paquete de 500g.</p>
+            <div class="price">S/3.50 por paquete</div>
+            <div style="margin: 1rem 0;">
+                <label for="quantity-fideos">Cantidad:</label>
+                <input type="number" id="quantity-fideos" min="1" max="10" value="1" style="width: 80px; padding: 0.5rem; margin-left: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+            <button class="select-btn" onclick="addToShoppingList('fideos', 'Fideos (500g)', 'S/3.50')">Agregar a lista</button>
+        </div>
+
+        <div class="service-card" data-category="abarrotes">
+            <h3>🥫 Atún en lata</h3>
+            <p>Atún en aceite, lata de 170g.</p>
+            <div class="price">S/4.50 por lata</div>
+            <div style="margin: 1rem 0;">
+                <label for="quantity-atun">Cantidad:</label>
+                <input type="number" id="quantity-atun" min="1" max="12" value="1" style="width: 80px; padding: 0.5rem; margin-left: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+            <button class="select-btn" onclick="addToShoppingList('atun', 'Atún en lata (170g)', 'S/4.50')">Agregar a lista</button>
+        </div>
+
+        <div class="service-card" data-category="abarrotes">
+            <h3>🧈 Aceite</h3>
+            <p>Aceite vegetal, botella de 1 litro.</p>
+            <div class="price">S/8.50 por botella</div>
+            <div style="margin: 1rem 0;">
+                <label for="quantity-aceite">Cantidad:</label>
+                <input type="number" id="quantity-aceite" min="1" max="5" value="1" style="width: 80px; padding: 0.5rem; margin-left: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+            <button class="select-btn" onclick="addToShoppingList('aceite', 'Aceite vegetal (1L)', 'S/8.50')">Agregar a lista</button>
+        </div>
+
+        <!-- Bebidas -->
+        <div class="service-card" data-category="bebidas">
+            <h3>💧 Agua mineral</h3>
+            <p>Agua mineral sin gas, botella de 2.5L.</p>
+            <div class="price">S/3.00 por botella</div>
+            <div style="margin: 1rem 0;">
+                <label for="quantity-agua">Cantidad:</label>
+                <input type="number" id="quantity-agua" min="1" max="10" value="1" style="width: 80px; padding: 0.5rem; margin-left: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+            <button class="select-btn" onclick="addToShoppingList('agua', 'Agua mineral (2.5L)', 'S/3.00')">Agregar a lista</button>
+        </div>
+
+        <div class="service-card" data-category="bebidas">
+            <h3>🥤 Gaseosa</h3>
+            <p>Gaseosa Coca Cola, botella de 1.5L.</p>
+            <div class="price">S/5.50 por botella</div>
+            <div style="margin: 1rem 0;">
+                <label for="quantity-gaseosa">Cantidad:</label>
+                <input type="number" id="quantity-gaseosa" min="1" max="6" value="1" style="width: 80px; padding: 0.5rem; margin-left: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+            <button class="select-btn" onclick="addToShoppingList('gaseosa', 'Gaseosa (1.5L)', 'S/5.50')">Agregar a lista</button>
+        </div>
+
+        <div class="service-card" data-category="bebidas">
+            <h3>🧃 Jugo natural</h3>
+            <p>Jugo de naranja natural, botella de 1L.</p>
+            <div class="price">S/6.00 por botella</div>
+            <div style="margin: 1rem 0;">
+                <label for="quantity-jugo">Cantidad:</label>
+                <input type="number" id="quantity-jugo" min="1" max="5" value="1" style="width: 80px; padding: 0.5rem; margin-left: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+            <button class="select-btn" onclick="addToShoppingList('jugo', 'Jugo de naranja (1L)', 'S/6.00')">Agregar a lista</button>
+        </div>
+
+        <!-- Productos de limpieza -->
+        <div class="service-card" data-category="limpieza">
+            <h3>🧽 Detergente</h3>
+            <p>Detergente en polvo, bolsa de 1kg.</p>
+            <div class="price">S/7.50 por bolsa</div>
+            <div style="margin: 1rem 0;">
+                <label for="quantity-detergente">Cantidad:</label>
+                <input type="number" id="quantity-detergente" min="1" max="5" value="1" style="width: 80px; padding: 0.5rem; margin-left: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+            <button class="select-btn" onclick="addToShoppingList('detergente', 'Detergente (1kg)', 'S/7.50')">Agregar a lista</button>
+        </div>
+
+        <div class="service-card" data-category="limpieza">
+            <h3>🧴 Lavavajillas</h3>
+            <p>Lavavajillas líquido, botella de 500ml.</p>
+            <div class="price">S/4.00 por botella</div>
+            <div style="margin: 1rem 0;">
+                <label for="quantity-lavavajillas">Cantidad:</label>
+                <input type="number" id="quantity-lavavajillas" min="1" max="5" value="1" style="width: 80px; padding: 0.5rem; margin-left: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+            <button class="select-btn" onclick="addToShoppingList('lavavajillas', 'Lavavajillas (500ml)', 'S/4.00')">Agregar a lista</button>
+        </div>
+
+        <div class="service-card" data-category="limpieza">
+            <h3>🧻 Papel higiénico</h3>
+            <p>Papel higiénico suave, paquete de 4 rollos.</p>
+            <div class="price">S/8.00 por paquete</div>
+            <div style="margin: 1rem 0;">
+                <label for="quantity-papel">Cantidad:</label>
+                <input type="number" id="quantity-papel" min="1" max="5" value="1" style="width: 80px; padding: 0.5rem; margin-left: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+            </div>
+            <button class="select-btn" onclick="addToShoppingList('papel', 'Papel higiénico (4 rollos)', 'S/8.00')">Agregar a lista</button>
+        </div>
+    </section>
+
+    <!-- Botones de acción -->
+    <section style="text-align: center; margin: 2rem 0;">
+        <button class="whatsapp-btn" onclick="sendShoppingList()">
+            📱 Enviar Lista por WhatsApp
+        </button>
+        <button class="order-btn" onclick="clearCart()" style="background: #f44336; margin-left: 1rem;">
+            🗑️ Limpiar Lista
+        </button>
+        <p style="color: #666; margin-top: 1rem;">
+            Tu lista se enviará a la tienda para preparar tu pedido
+        </p>
+    </section>
+
+    <!-- Información de delivery -->
+    <section style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+        <div style="background: #f8f9fa; padding: 2rem; border-radius: 15px; border-left: 5px solid #4CAF50;">
+            <h3 style="color: #4CAF50; margin-bottom: 1rem;">🚚 Información de Delivery</h3>
+            <ul style="color: #666; line-height: 1.8;">
+                <li><strong>Horario:</strong> Lunes a Domingo de 7:00 AM a 9:00 PM</li>
+                <li><strong>Tiempo de entrega:</strong> 45-90 minutos</li>
+                <li><strong>Costo de delivery:</strong> S/8.00 (Gratis en compras mayores a S/80.00)</li>
+                <li><strong>Zona de cobertura:</strong> Todo Los Órganos y alrededores</li>
+                <li><strong>Pago:</strong> Efectivo contra entrega, Yape o transferencia</li>
+                <li><strong>Productos frescos:</strong> Seleccionamos los mejores productos para ti</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Resumen del carrito -->
+    <div id="cart-summary" class="cart-summary hidden">
+        <!-- Se llena dinámicamente con JavaScript -->
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Función para filtrar productos por categoría
+        function filterProducts(category) {
+            const products = document.querySelectorAll('.service-card[data-category]');
+            
+            products.forEach(product => {
+                if (category === 'todos' || product.dataset.category === category) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+            
+            // Actualizar botones activos
+            const buttons = document.querySelectorAll('button[onclick^="filterProducts"]');
+            buttons.forEach(btn => {
+                btn.style.opacity = '0.7';
+            });
+            event.target.style.opacity = '1';
+        }
+        
+        // Mostrar todos los productos por defecto
+        document.addEventListener('DOMContentLoaded', function() {
+            filterProducts('todos');
+        });
+    </script>
+</body>
+</html>
