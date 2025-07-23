@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movilidad - Servicios Turísticos Los Órganos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2196F3">
+</head>
+<body>
+    <!-- Header -->
+    <header class="page-header" style="position: relative;">
+        <button class="back-btn" onclick="goBack()">← Volver</button>
+        <h1>🚗 Servicio de Movilidad</h1>
+        <p>Reserva tu taxi de manera fácil y rápida</p>
+    </header>
+
+    <!-- Formulario de reserva -->
+    <section class="reservation-form" style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+        <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+            <h2 style="color: #2196F3; margin-bottom: 1.5rem;">Detalles de tu viaje</h2>
+            
+            <div style="display: grid; gap: 1rem; margin-bottom: 1.5rem;">
+                <div>
+                    <label for="pickup-location" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Lugar de recojo:</label>
+                    <input type="text" id="pickup-location" placeholder="Ej: Hotel Los Órganos" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                </div>
+                
+                <div>
+                    <label for="destination" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Destino:</label>
+                    <input type="text" id="destination" placeholder="Ej: Playa Los Órganos" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                </div>
+                
+                <div>
+                    <label for="pickup-time" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Hora de recojo:</label>
+                    <input type="datetime-local" id="pickup-time" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lista de taxis disponibles -->
+    <section class="service-grid">
+        <div class="service-card">
+            <h3>🚗 Taxi Económico</h3>
+            <p>Vehículo cómodo para 4 pasajeros. Ideal para trayectos cortos dentro del distrito.</p>
+            <div class="price">S/15.00 - S/25.00</div>
+            <ul style="text-align: left; margin: 1rem 0; color: #666;">
+                <li>Capacidad: 4 pasajeros</li>
+                <li>Aire acondicionado</li>
+                <li>Conductor experimentado</li>
+                <li>Seguro incluido</li>
+            </ul>
+            <button class="select-btn" onclick="selectTaxi('taxi1', 'Taxi Económico', 'S/15.00 - S/25.00')">Seleccionar</button>
+        </div>
+
+        <div class="service-card">
+            <h3>🚙 Taxi SUV</h3>
+            <p>Vehículo espacioso para grupos grandes o con equipaje. Perfecto para tours familiares.</p>
+            <div class="price">S/30.00 - S/45.00</div>
+            <ul style="text-align: left; margin: 1rem 0; color: #666;">
+                <li>Capacidad: 7 pasajeros</li>
+                <li>Espacio para equipaje</li>
+                <li>Aire acondicionado</li>
+                <li>Ideal para grupos</li>
+            </ul>
+            <button class="select-btn" onclick="selectTaxi('taxi2', 'Taxi SUV', 'S/30.00 - S/45.00')">Seleccionar</button>
+        </div>
+
+        <div class="service-card">
+            <h3>🏖️ Taxi Playero</h3>
+            <p>Especializado en traslados a playas y puntos turísticos. Conoce los mejores spots.</p>
+            <div class="price">S/20.00 - S/35.00</div>
+            <ul style="text-align: left; margin: 1rem 0; color: #666;">
+                <li>Capacidad: 4 pasajeros</li>
+                <li>Conductor guía local</li>
+                <li>Conoce rutas turísticas</li>
+                <li>Recomendaciones incluidas</li>
+            </ul>
+            <button class="select-btn" onclick="selectTaxi('taxi3', 'Taxi Playero', 'S/20.00 - S/35.00')">Seleccionar</button>
+        </div>
+
+        <div class="service-card">
+            <h3>🌙 Taxi Nocturno</h3>
+            <p>Servicio disponible 24/7 para traslados nocturnos seguros y confiables.</p>
+            <div class="price">S/25.00 - S/40.00</div>
+            <ul style="text-align: left; margin: 1rem 0; color: #666;">
+                <li>Servicio 24 horas</li>
+                <li>Conductores verificados</li>
+                <li>Seguridad garantizada</li>
+                <li>Tarifa nocturna</li>
+            </ul>
+            <button class="select-btn" onclick="selectTaxi('taxi4', 'Taxi Nocturno', 'S/25.00 - S/40.00')">Seleccionar</button>
+        </div>
+
+        <div class="service-card">
+            <h3>🏄‍♂️ Taxi Surfero</h3>
+            <p>Especializado en traslados a spots de surf con espacio para tablas y equipo.</p>
+            <div class="price">S/18.00 - S/30.00</div>
+            <ul style="text-align: left; margin: 1rem 0; color: #666;">
+                <li>Espacio para tablas de surf</li>
+                <li>Conoce los mejores breaks</li>
+                <li>Horarios flexibles</li>
+                <li>Conductor surfero</li>
+            </ul>
+            <button class="select-btn" onclick="selectTaxi('taxi5', 'Taxi Surfero', 'S/18.00 - S/30.00')">Seleccionar</button>
+        </div>
+
+        <div class="service-card">
+            <h3>✈️ Taxi Aeropuerto</h3>
+            <p>Traslados desde y hacia el aeropuerto de Talara. Servicio puntual y confiable.</p>
+            <div class="price">S/80.00 - S/120.00</div>
+            <ul style="text-align: left; margin: 1rem 0; color: #666;">
+                <li>Traslado aeropuerto-hotel</li>
+                <li>Servicio de recojo puntual</li>
+                <li>Vehículo cómodo</li>
+                <li>Precio fijo</li>
+            </ul>
+            <button class="select-btn" onclick="selectTaxi('taxi6', 'Taxi Aeropuerto', 'S/80.00 - S/120.00')">Seleccionar</button>
+        </div>
+    </section>
+
+    <!-- Botón de reserva -->
+    <section style="text-align: center; margin: 2rem 0;">
+        <button class="whatsapp-btn" onclick="reserveTaxi()">
+            📱 Reservar por WhatsApp
+        </button>
+        <p style="color: #666; margin-top: 1rem;">
+            Te contactaremos para confirmar disponibilidad y detalles del viaje
+        </p>
+    </section>
+
+    <!-- Información adicional -->
+    <section style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+        <div style="background: #f8f9fa; padding: 2rem; border-radius: 15px; border-left: 5px solid #2196F3;">
+            <h3 style="color: #2196F3; margin-bottom: 1rem;">ℹ️ Información importante</h3>
+            <ul style="color: #666; line-height: 1.8;">
+                <li><strong>Tarifas:</strong> Los precios pueden variar según la distancia y hora del día</li>
+                <li><strong>Reservas:</strong> Se recomienda reservar con al menos 30 minutos de anticipación</li>
+                <li><strong>Pago:</strong> Aceptamos efectivo y transferencias bancarias</li>
+                <li><strong>Cancelación:</strong> Puedes cancelar hasta 15 minutos antes sin costo</li>
+                <li><strong>Contacto:</strong> Todos nuestros conductores están verificados y capacitados</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Resumen del carrito -->
+    <div id="cart-summary" class="cart-summary hidden">
+        <!-- Se llena dinámicamente con JavaScript -->
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
