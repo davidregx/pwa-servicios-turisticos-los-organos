@@ -334,7 +334,7 @@ body.dark-mode .dark-mode-toggle:hover {
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
-/* Secciones adicionales */
+/* Secciones adicionales - Horizontal en móvil */
 .additional-sections {
     max-width: 1200px;
     margin: 2rem auto;
@@ -345,6 +345,42 @@ body.dark-mode .dark-mode-toggle:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
+}
+
+.horizontal-sections {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.horizontal-item {
+    flex: 0 0 280px;
+    min-width: 280px;
+    scroll-snap-align: start;
+}
+
+@media (max-width: 768px) {
+    .horizontal-sections {
+        display: flex;
+        overflow-x: auto;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+    
+    .horizontal-item {
+        flex: 0 0 250px;
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .horizontal-item {
+        flex: 0 0 220px;
+        min-width: 220px;
+    }
 }
 
 .info-section {
