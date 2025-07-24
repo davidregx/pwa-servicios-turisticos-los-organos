@@ -292,7 +292,7 @@ body.dark-mode .dark-mode-toggle:hover {
     background-color: #2196F3;
 }
 
-/* Banners del distrito */
+/* Banners del distrito - Imágenes MUCHO más grandes */
 .district-banners {
     background: white;
     padding: 2rem 1rem;
@@ -308,16 +308,17 @@ body.dark-mode .dark-mode-toggle:hover {
 
 .banners-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    max-width: 800px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .banner-item {
     text-align: center;
-    padding: 1rem;
-    border-radius: 10px;
+    padding: 2rem;
+    border-radius: 20px;
     transition: transform 0.3s ease;
 }
 
@@ -327,11 +328,95 @@ body.dark-mode .dark-mode-toggle:hover {
 
 .banner-item img {
     width: 100%;
-    max-width: 150px;
-    height: 80px;
+    max-width: 100%;
+    height: 300px;
     object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* Desktop - Imágenes MAXIMIZADAS */
+@media (min-width: 1024px) {
+    .district-banners {
+        padding: 1rem 0.5rem;
+    }
+    
+    .district-banners h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .banners-grid {
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        gap: 0.25rem;
+        max-width: 100%;
+    }
+    
+    .banner-item {
+        padding: 0.1rem;
+    }
+    
+    .banner-item img {
+        height: 600px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+}
+
+/* Large desktop - Imágenes ULTRA grandes */
+@media (min-width: 1440px) {
+    .banners-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.1rem;
+        max-width: 100%;
+    }
+    
+    .banner-item {
+        padding: 0.1rem;
+    }
+    
+    .banner-item img {
+        height: 700px;
+    }
+}
+
+/* Mobile - Imágenes MAXIMIZADAS */
+@media (max-width: 768px) {
+    .district-banners {
+        padding: 0.5rem 0.25rem;
+    }
+    
+    .district-banners h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .banners-grid {
+        grid-template-columns: 1fr;
+        gap: 0.1rem;
+        max-width: 100%;
+    }
+    
+    .banner-item {
+        padding: 0.1rem;
+    }
+    
+    .banner-item img {
+        height: 450px;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-item img {
+        height: 400px;
+    }
+}
+
+@media (max-width: 375px) {
+    .banner-item img {
+        height: 350px;
+    }
 }
 
 /* Secciones adicionales - Horizontal en móvil */
